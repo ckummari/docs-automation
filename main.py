@@ -132,6 +132,37 @@ def usage_update(
                     copy_src_lines = True
     logger.info("Script is successfully executed")
 
+def usage_update_readme (
+    readme: str,
+    usage_m_start: str,
+    usage_m_end: str,
+    patching_file: str,
+    patching_pattern: str
+):
+    copy_src_lines = True
+    with open(readme, 'rt') as s:
+        source_file_content = s.readlines()
+    with open(readme, 'wt') as t:
+        for s_line in source_file_content:
+            if copy_src_lines:
+                t.writelines([s_line])
+                if usage_m_start in s_line:
+                    copy_src_lines = False
+                    t.write("## terraform-docs\n")
+                    t.write("<details>\n")
+                    t.write("<summary>Terraform-Docs</summary>\n")
+                    t.writelines(
+                        pickup_patch_doc(
+                            patching_file,
+                            patching_pattern
+                        )
+                    )
+                    t.write("</details>")
+            else:
+                if usage_m_end in s_line:
+                    t.writelines([s_line])
+                    copy_src_lines = True
+    logger.info("Script is successfully executed")
 
 if __name__ == '__main__':
     (
