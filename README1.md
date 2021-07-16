@@ -2,22 +2,22 @@
 
 No requirements.
 
-<details><summary>## Providers</summary>
+</details><details><summary>## Providers</summary>
 
 No providers.
 
-<details><summary>## Modules</summary>
+</details><details><summary>## Modules</summary>
 
 No modules.
 
-<details><summary>## Resources</summary>
+</details><details><summary>## Resources</summary>
 
 No resources.
 
-<details><summary>## Inputs</summary>
+</details><details><summary>## Inputs</summary>
 
 No inputs.
 
-<details><summary>## Outputs</summary>
+</details><details><summary>## Outputs</summary>
 
 No outputs.
