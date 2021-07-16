@@ -31,7 +31,7 @@ def providers_replace(filePath, text, subs, flags=0):
 
 file_path="README.md"
 text="## Providers"
-subs="<details><summary>## Providers</summary>"
+subs="</details><details><summary>## Providers</summary>"
 #calling the replace method
 providers_replace(file_path, text, subs)
 
@@ -48,7 +48,7 @@ def modules_replace(filePath, text, subs, flags=0):
 
 file_path="README.md"
 text="## Modules"
-subs="<details><summary>## Modules</summary>"
+subs="</details><details><summary>## Modules</summary>"
 #calling the replace method
 modules_replace(file_path, text, subs)
 
@@ -66,7 +66,7 @@ def resources_replace(filePath, text, subs, flags=0):
 
 file_path="README.md"
 text="## Resources"
-subs="<details><summary>## Resources</summary>"
+subs="</details><details><summary>## Resources</summary>"
 #calling the replace method
 resources_replace(file_path, text, subs)
 
@@ -84,7 +84,7 @@ def inputs_replace(filePath, text, subs, flags=0):
 
 file_path="README.md"
 text="## Inputs"
-subs="<details><summary>## Inputs</summary>"
+subs="</details><details><summary>## Inputs</summary>"
 #calling the replace method
 inputs_replace(file_path, text, subs)
 
@@ -99,9 +99,10 @@ def outputs_replace(filePath, text, subs, flags=0):
         file.seek(0)
         file.truncate()
         file.write(file_contents)
+        file.write("</details>")
 
 file_path="README.md"
 text="## Outputs"
-subs="<details><summary>## Outputs</summary>"
+subs="</details><details><summary>## Outputs</summary>"
 #calling the replace method
 outputs_replace(file_path, text, subs)
